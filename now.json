@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "scope": "rubynor",
-  "alias": ["bigfive-test.com"],
+  "scope": "Thesis",
+  "alias": ["Database TCC"],
   "env": {
-    "MONGODB_URI": "@mongodb_uri",
+    "MONGODB_URI":"mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/test",
+
     "MONGODB_COLLECTION": "results",
-    "BASE_URL": "https://bigfive-test.com"
+    "BASE_URL": "http://localhost:3000/"
   },
   "builds": [
     {
@@ -23,26 +24,12 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/api/result/:id/:lang",
-      "destination": "/api/result.js"
-    },
-    {
-      "source": "/api/result/:id",
-      "destination": "/api/result.js"
-    },
-    {
-      "source": "/api/compare/:id",
-      "destination": "/api/compare.js"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1.js"
-    },
-    {
-      "source": "/service-worker.js",
-      "destination": "/sw.js"
-    }
+    {"source": "/api/result/:id/:lang","destination": "/api/result.js"},
+    {"source": "/api/result/:id","destination": "/api/result.js"},
+    {"source": "/api/compare/:id","destination": "/api/compare.js"},
+    {"source":"/api/save","destination":"/api/save.js"},
+    {"source": "/api/(.*)","destination": "/api/$1.js"},
+    {"source": "/service-worker.js","destination": "/sw.js"}
   ],
   "headers": [
     {

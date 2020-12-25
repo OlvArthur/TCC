@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
     return
   }
 
+  console.log('chegou aqui')
   const { body: payload } = req
 
   if (!payload) {

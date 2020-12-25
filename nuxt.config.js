@@ -217,7 +217,7 @@ export default {
           }
         ],
         seo: true,
-        baseUrl: 'https://bigfive-test.com',
+        baseUrl: 'http://localhost:3000',
         defaultLocale: 'en',
         strategy: 'prefix_except_default',
         lazy: true,
@@ -251,6 +251,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'http://localhost:3000/'
   },
   sitemap: {
     hostname: 'https://bigfive-test.com'
@@ -290,7 +291,8 @@ export default {
     }
   },
   env: {
-    API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
+    API_URL: `${process.env.BASE_URL}/api/`, // TODO: Fix for dev environment
+    baseURL: process.env.BASE_URL
   },
   build: {
     extractCSS: true,

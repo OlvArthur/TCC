@@ -193,6 +193,7 @@ export const actions = {
     } catch (error) {
       context.commit('SET_SNACKBAR', { msg: error.message, type: 'error' })
       context.commit('SET_LOADING', false)
+      console.log(error.message)
     }
   }
 }
