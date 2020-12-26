@@ -19,10 +19,13 @@ module.exports = async (req, res) => {
   const { error } = validate(payload)
   const isValid = !error
 
+  console.log('chegou aqui 2')
+
   if (!isValid) {
     res.status(400).json({ type: 'error', message: error })
     return
   }
+  console.log('chegou aqui 3')
 
   try {
     const db = await connectToDb()
@@ -30,8 +33,12 @@ module.exports = async (req, res) => {
 
     const data = await collection.insertOne(payload)
     res.send({ id: data.insertedId })
+    console.log('chegou aqui 4')
+
     return
   } catch (error) {
+    console.log('chegou aqui 5')
+
     res.status(500).json({ type: 'error', message: error.message })
   }
 }

@@ -291,8 +291,8 @@ export default {
     }
   },
   env: {
-    API_URL: `${process.env.BASE_URL}/api/`, // TODO: Fix for dev environment
-    baseURL: process.env.BASE_URL
+    API_URL: 'tcc-delta.vercel.app/api/' // TODO: Fix for dev environment
+    // baseURL: process.env.BASE_URL
   },
   build: {
     extractCSS: true,
