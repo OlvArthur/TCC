@@ -291,7 +291,8 @@ export default {
     }
   },
   env: {
-    API_URL: 'tcc-delta.vercel.app/api/' // TODO: Fix for dev environment
+    API_URL: 'tcc-delta.vercel.app/api/', // TODO: Fix for dev environment
+    MONGODB_URI: 'test nuxt.config'
     // baseURL: process.env.BASE_URL
   },
   build: {

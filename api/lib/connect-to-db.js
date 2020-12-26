@@ -3,6 +3,7 @@ const MongoClient = require('mongodb').MongoClient
 let cachedDb = null
 
 const uri = process.env.MONGODB_URI
+console.log(uri)
 
 module.exports = async () => {
   if (cachedDb) return cachedDb
