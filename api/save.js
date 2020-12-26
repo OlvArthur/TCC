@@ -29,11 +29,13 @@ module.exports = async (req, res) => {
 
   try {
     const db = await connectToDb()
-    const collection = db.collection(dbCollection)
-
-    const data = await collection.insertOne(payload)
-    res.send({ id: data.insertedId })
     console.log('chegou aqui 4')
+    const collection = db.collection(dbCollection)
+    console.log('5')
+    const data = await collection.insertOne(payload)
+    console.log('6')
+
+    res.send({ id: data.insertedId })
 
     return
   } catch (error) {
