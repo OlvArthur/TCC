@@ -27,6 +27,9 @@ module.exports = async (req, res) => {
   }
   console.log('chegou aqui 3')
 
+  const db = await connectToDb()
+  console.log('test db', db)
+
   try {
     const db = await connectToDb()
     console.log('chegou aqui 4')
