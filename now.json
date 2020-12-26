@@ -3,7 +3,7 @@
   "scope": "Thesis",
   "alias": ["Database TCC"],
   "env": {
-    "MONGODB_URI":"test now.json",
+    "MONGODB_URI":"mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/testnowjson?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true",
     "MONGODB_COLLECTION": "results",
     "BASE_URL": "http://localhost:3000/"
   },
