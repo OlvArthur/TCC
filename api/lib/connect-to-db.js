@@ -1,5 +1,5 @@
 // module.exports = async () => {
-export default async () => {
+async function connectToDb (params) {
   // const dbCollection = process.env.MONGODB_COLLECTION
   // const dbCollection = 'results'
 
@@ -16,22 +16,20 @@ export default async () => {
   const client = new MongoClient(uri)
   console.log('chegou na conexão')
 
-  try {
-    if (cachedDb) return cachedDb
-    await client.connect()
-    console.log('tentando conectar', cachedDb)
+  if (cachedDb) return cachedDb
+  await client.connect()
+  console.log('tentando conectar', cachedDb)
 
-    await client.db('admin').command({ ping: 1 })
+  await client.db('admin').command({ ping: 1 })
 
-    const db = client.db(new URL(uri).pathname.substr(1))
-    console.log('Connected successfully to server')
+  const db = client.db(new URL(uri).pathname.substr(1))
+  console.log('Connected successfully to server')
 
-    cachedDb = db
+  cachedDb = db
 
-    return db
-  } catch (err) {
-    console.log(err.stack)
-  }
+  return db
 
   // const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 }
+
+export default connectToDb
