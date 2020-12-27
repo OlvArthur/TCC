@@ -7,13 +7,13 @@ const uri = 'mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/test?re
 console.log(uri)
 
 const client = new MongoClient(uri)
-
+console.log('chegou na conexão')
 module.exports = async () => {
+  console.log('tentando conectar', cachedDb)
   if (cachedDb) return cachedDb
 
   await client.connect()
 
-  console.log('tentando conectar', cachedDb)
   // const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
   await client.db('admin').command({ ping: 1 })
