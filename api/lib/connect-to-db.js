@@ -1,14 +1,14 @@
-const { MongoClient } = require('mongodb')
-
-let cachedDb = null
-
-// const uri = process.env.MONGODB_URI
-const uri = 'mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/test?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true'
-console.log(uri)
-
-const client = new MongoClient(uri)
-console.log('chegou na conexão')
 module.exports = async () => {
+  const { MongoClient } = require('mongodb')
+
+  let cachedDb = null
+
+  // const uri = process.env.MONGODB_URI
+  const uri = 'mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/test?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true'
+  console.log(uri)
+
+  const client = new MongoClient(uri)
+  console.log('chegou na conexão')
   console.log('tentando conectar', cachedDb)
   if (cachedDb) return cachedDb
 
