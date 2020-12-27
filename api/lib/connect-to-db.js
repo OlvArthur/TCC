@@ -1,5 +1,4 @@
-// module.exports = async () => {
-async function connectToDb (params) {
+module.exports = async () => {
   // const dbCollection = process.env.MONGODB_COLLECTION
   // const dbCollection = 'results'
 
@@ -31,5 +30,3 @@ async function connectToDb (params) {
 
   // const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 }
-
-export default connectToDb
