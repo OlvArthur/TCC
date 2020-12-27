@@ -1,6 +1,7 @@
-module.exports = async () => {
+// module.exports = async () => {
+export default async () => {
   // const dbCollection = process.env.MONGODB_COLLECTION
-  const dbCollection = 'results'
+  // const dbCollection = 'results'
 
   const { MongoClient } = require('mongodb')
 
@@ -27,7 +28,7 @@ module.exports = async () => {
 
     cachedDb = db
 
-    return db.collection(dbCollection)
+    return db
   } catch (err) {
     console.log(err.stack)
   }
