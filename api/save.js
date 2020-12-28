@@ -8,7 +8,6 @@ module.exports = async (req, res) => {
     return
   }
 
-  console.log('chegou aqui')
   const { body: payload } = req
 
   if (!payload) {
@@ -26,10 +25,13 @@ module.exports = async (req, res) => {
 
   try {
     const db = await connectToDb()
+
     const collection = db.collection(dbCollection)
 
     const data = await collection.insertOne(payload)
+
     res.send({ id: data.insertedId })
+
     return
   } catch (error) {
     res.status(500).json({ type: 'error', message: error.message })

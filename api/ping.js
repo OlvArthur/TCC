@@ -1,3 +1,3 @@
-module.exports = async (req, res) => {
+module.exports = async (_, res) => {
   res.json({ ping: 'pong' })
 }
