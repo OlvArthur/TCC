@@ -1,5 +1,6 @@
 const connectToDb = require('./lib/connect-to-db')
 const validate = require('./lib/validate-test')
+// const dbCollection = process.env.MONGODB_COLLECTION
 const dbCollection = 'results'
 
 module.exports = async (req, res) => {
@@ -8,7 +9,6 @@ module.exports = async (req, res) => {
     return
   }
 
-  console.log('chegou aqui')
   const { body: payload } = req
 
   if (!payload) {
@@ -19,13 +19,10 @@ module.exports = async (req, res) => {
   const { error } = validate(payload)
   const isValid = !error
 
-  console.log('chegou aqui 2')
-
   if (!isValid) {
     res.status(400).json({ type: 'error', message: error })
     return
   }
-  console.log('chegou aqui 3')
 
   try {
     const db = await connectToDb()
