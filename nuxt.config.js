@@ -291,8 +291,7 @@ export default {
     }
   },
   env: {
-    API_URL: 'https://tcc-delta.vercel.app/api/', // TODO: Fix for dev environment
-    MONGODB_URI: 'mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/testnuxtconfig?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true'
+    API_URL: 'https://tcc-delta.vercel.app/api/' // TODO: Fix for dev environment
     // baseURL: process.env.BASE_URL
   },
   build: {
