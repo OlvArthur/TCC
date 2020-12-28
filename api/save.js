@@ -1,7 +1,6 @@
 const connectToDb = require('./lib/connect-to-db')
 const validate = require('./lib/validate-test')
-// const dbCollection = process.env.MONGODB_COLLECTION
-const dbCollection = 'results'
+const dbCollection = process.env.MONGODB_COLLECTION
 
 module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') {
@@ -26,18 +25,15 @@ module.exports = async (req, res) => {
 
   try {
     const db = await connectToDb()
-    console.log('chegou aqui 4')
+
     const collection = db.collection(dbCollection)
-    console.log('5')
+
     const data = await collection.insertOne(payload)
-    console.log('6')
 
     res.send({ id: data.insertedId })
 
     return
   } catch (error) {
-    console.log('chegou aqui 5')
-
     res.status(500).json({ type: 'error', message: error.message })
   }
 }

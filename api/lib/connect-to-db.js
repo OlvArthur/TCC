@@ -3,10 +3,7 @@ module.exports = async () => {
 
   let cachedDb = null
 
-  // const uri = process.env.MONGODB_URI
-  const uri = 'mongodb+srv://Deploy:Luanny2509!@cluster0.dsehz.mongodb.net/test?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true'
-
-  console.log(uri)
+  const uri = process.env.MONGODB_URI
 
   const client = new MongoClient(uri)
 
@@ -19,6 +16,4 @@ module.exports = async () => {
   cachedDb = db
 
   return db
-
-  // const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 }
