@@ -182,9 +182,9 @@ export const actions = {
 
       const result = {
         testId: getInfo.shortId,
-        twitterUsername: context.state.form.username,
         lang: context.state.form.language,
         invalid: context.state.test.invalid,
+        twitterUsername: context.state.form.username,
         answers: Object.keys(answers).map(key => answers[key]),
         timeElapsed: elapsedTimeInSeconds(context.state.test.testStart),
         dateStamp: Date.now()
