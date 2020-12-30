@@ -4,6 +4,7 @@ const schema = Joi.object({
   testId: Joi.string(),
   lang: Joi.string(),
   invalid: Joi.boolean(),
+  twitterUsername: Joi.string(),
   answers: Joi.array().items(Joi.object({
     questionID: Joi.string(),
     domain: Joi.string(),

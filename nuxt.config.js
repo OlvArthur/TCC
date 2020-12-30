@@ -290,7 +290,7 @@ export default {
     }
   },
   env: {
-    API_URL: 'https://tcc-delta.vercel.app/api/' // TODO: Fix for dev environment
+    API_URL: 'https://tcc-git-staging.vercel.app/api/' // TODO: Fix for dev environment
     // baseURL: process.env.BASE_URL
   },
   build: {

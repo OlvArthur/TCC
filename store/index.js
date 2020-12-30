@@ -18,6 +18,7 @@ const getDefaultState = () => ({
     age: 0,
     language: '',
     gender: '',
+    username: '',
     accepted: false
   },
   languages,
@@ -85,6 +86,9 @@ export const mutations = {
   SET_LANGUAGE: (state, language) => {
     state.form.language = language
     state.slide++
+  },
+  SET_TWITTER_USERNAME: (state,username) => {
+    state.form.username = username
   },
   SET_GENDER: (state, gender) => {
     state.form.gender = gender
@@ -175,10 +179,12 @@ export const actions = {
 
       const answers = context.state.test.answers
 
+
       const result = {
         testId: getInfo.shortId,
         lang: context.state.form.language,
         invalid: context.state.test.invalid,
+        twitterUsername: context.state.form.username,
         answers: Object.keys(answers).map(key => answers[key]),
         timeElapsed: elapsedTimeInSeconds(context.state.test.testStart),
         dateStamp: Date.now()
