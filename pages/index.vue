@@ -15,13 +15,14 @@
             v-html="$t('frontpage.description.info')"
           />
 
-          <v-row cols="12" class="py-10">
+          <v-row cols="12" class="py-10 ml-auto">
             <div>
               <v-text-field
                 v-model="username"
                 class="pt-5"
                 hide-details="auto"
                 label="Twitter username"
+                placeholder="@usuario"
               ></v-text-field>
             </div>
 
@@ -30,8 +31,8 @@
               color="#0070f3"
               @click="SET_TWITTER_USERNAME(username)"
               :to="localePath('/test')"
-              dark
-              class="mt-7"
+              class="mt-7 white--text"
+              :disabled="!username"
             >
               {{ $t("frontpage.call_to_action") }}
             </v-btn>
