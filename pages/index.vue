@@ -15,7 +15,7 @@
             v-html="$t('frontpage.description.info')"
           />
 
-          <v-row cols="12" class="py-10">
+          <v-row cols="12" class="py-10 ml-auto">
             <div>
               <v-text-field
                 v-model="username"
